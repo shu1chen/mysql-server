@@ -31,3 +31,5 @@ scalability_jobs_*
 
 # Cache directory used by e.g. clangd.
 .cache/
+
+.build_*/
