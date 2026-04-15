@@ -3241,6 +3241,25 @@ template bool Dictionary_client::store(Resource_group *);
 template void Dictionary_client::remove_uncommitted_objects<Resource_group>(
     bool);
 template bool Dictionary_client::update(Resource_group *);
+
+template bool Dictionary_client::foreach<Schema>(
+    const Object_key *,
+    std::function<bool(std::unique_ptr<Schema> &)> const &) const;
+template bool Dictionary_client::foreach<Table>(
+    const Object_key *,
+    std::function<bool(std::unique_ptr<Table> &)> const &) const;
+template bool Dictionary_client::foreach<Tablespace>(
+    const Object_key *,
+    std::function<bool(std::unique_ptr<Tablespace> &)> const &) const;
+template bool Dictionary_client::foreach<Event>(
+    const Object_key *,
+    std::function<bool(std::unique_ptr<Event> &)> const &) const;
+template bool Dictionary_client::foreach<Routine>(
+    const Object_key *,
+    std::function<bool(std::unique_ptr<Routine> &)> const &) const;
+template bool Dictionary_client::foreach<View>(
+    const Object_key *,
+    std::function<bool(std::unique_ptr<View> &)> const &) const;
 /**
  @endcond
 */
